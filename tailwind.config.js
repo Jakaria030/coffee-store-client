@@ -12,6 +12,7 @@ export default {
       },
       backgroundImage: {
         "header-img": "url('./src/assets/1.jpg')",
+        "footer-img": "url('./src/assets/2.jpg')",
       }
     },
   },
