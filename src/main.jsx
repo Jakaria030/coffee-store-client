@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App';
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import AddCoffee from './components/AddCoffee';
-import UpdateCoffee from './components/UpdateCoffee';
-import Home from './components/Home';
+import AddCoffee from './pages/AddCoffee';
+import UpdateCoffee from './pages/UpdateCoffee';
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         element: <AddCoffee></AddCoffee>,
       },
       {
-        path: "/updateCoffe",
+        path: "/updateCoffee",
         element: <UpdateCoffee></UpdateCoffee>,
       },
     ],
