@@ -5,10 +5,12 @@ import Form from "../components/Form";
 const AddCoffee = () => {
     return (
         <section className="max-w-7xl mx-auto">
-            <Link to="/" className="flex items-center gap-2 py-8">
-                <GoArrowLeft className="text-2xl font-Rancho font-bold"></GoArrowLeft>
-                <h3 className="text-xl font-Rancho font-bold">Back to home</h3>
-            </Link>
+            <div className="inline-block py-8">
+                <Link to="/" className="flex items-center gap-2">
+                    <GoArrowLeft className="text-2xl font-Rancho font-bold"></GoArrowLeft>
+                    <h3 className="text-xl font-Rancho font-bold">Back to home</h3>
+                </Link>
+            </div>
 
             <Form></Form>
         </section>

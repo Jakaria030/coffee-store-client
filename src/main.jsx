@@ -6,11 +6,13 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import AddCoffee from './pages/AddCoffee';
 import UpdateCoffee from './pages/UpdateCoffee';
 import Home from './pages/Home';
+import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
