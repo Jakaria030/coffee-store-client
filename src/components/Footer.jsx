@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer>
             {/* footer top */}
-            <section className="bg-[#F5F5F5] pt-5 sm:pt-10 lg:pt-16">
+            <section className="bg-[#F5F5F5] pt-8 sm:pt-10 lg:pt-12 mt-8 md:mt-16">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-5 p-5">
                     {/* left side */}
                     <div className="basis-1/2 space-y-5">
