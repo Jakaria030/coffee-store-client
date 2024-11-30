@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import Form from "../components/Form";
 
 const AddCoffee = () => {
+
+    const controlForm = {
+        id: "addCoffeeForm",
+        title: "Add New Coffee",
+        button: "Add Coffee"
+    };
+
     return (
         <section className="max-w-7xl mx-auto">
             <div className="inline-block py-8">
@@ -12,7 +19,9 @@ const AddCoffee = () => {
                 </Link>
             </div>
 
-            <Form></Form>
+            <Form 
+                controlForm = {controlForm}
+            ></Form>
         </section>
     );
 };
