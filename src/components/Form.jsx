@@ -129,8 +129,8 @@ const Form = ({ controlForm }) => {
 export default Form;
 
 // https://i.ibb.co.com/HCtgVsZ/1.png
-// https://i.ibb.co.com/HCtgVsZ/1.pnghttps://i.ibb.co.com/5T8BWQp/2.png
+// https://i.ibb.co.com/5T8BWQp/2.png
 // https://i.ibb.co.com/qDBJt2n/3.png
 // https://i.ibb.co.com/bgzSBfs/4.png
-// https://i.ibb.co.com/bgzSBfs/4.pnghttps://i.ibb.co.com/N7Bpy0W/5.png
+// https://i.ibb.co.com/N7Bpy0W/5.png
 // https://i.ibb.co.com/mHjw5xN/6.png

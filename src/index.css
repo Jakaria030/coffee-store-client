@@ -2,3 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sip-savor::before{
+    content: "---";
+}
+.sip-savor::after{
+    content: "---";
+}
