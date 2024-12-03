@@ -1,6 +1,7 @@
+import Swal from "sweetalert2";
 
 const Form = ({ controlForm }) => {
-
+    // console.log(controlForm);
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -30,12 +31,33 @@ const Form = ({ controlForm }) => {
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
-                    alert("Insert Successfully.");
+                    Swal.fire({
+                        title: "Inserted!",
+                        text: "Your coffe has been Inserted.",
+                        icon: "success"
+                    });
                     form.reset();
                 }
             })
         }else{
             // send data to update
+            fetch(`http://localhost:5000/coffee/${controlForm._id}`, {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(newCoffee)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.acknowledged){
+                    Swal.fire({
+                        title: "Updated!",
+                        text: "Your coffe has been updated.",
+                        icon: "success"
+                    });
+                }
+            });
         }
 
     };
@@ -55,13 +77,13 @@ const Form = ({ controlForm }) => {
                             <label className="label text-[#1B1A1A]">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="Enter coffee name" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
+                            <input type="text" name="name" defaultValue={controlForm?.name} placeholder="Enter coffee name" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
                         </div>
                         <div className="flex-grow form-control">
                             <label className="label text-[#1B1A1A]">
                                 <span className="label-text">Chef</span>
                             </label>
-                            <input type="text" name="chef" placeholder="Enter coffee chef" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
+                            <input type="text" name="chef" defaultValue={controlForm?.chef} placeholder="Enter coffee chef" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
                         </div>
                     </div>
 
@@ -71,13 +93,13 @@ const Form = ({ controlForm }) => {
                             <label className="label text-[#1B1A1A]">
                                 <span className="label-text">Supplier</span>
                             </label>
-                            <input type="text" name="supplier" placeholder="Enter coffee supplier" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
+                            <input type="text" name="supplier" defaultValue={controlForm?.supplier} placeholder="Enter coffee supplier" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
                         </div>
                         <div className="flex-grow form-control">
                             <label className="label text-[#1B1A1A]">
                                 <span className="label-text">Taste</span>
                             </label>
-                            <input type="text" name="taste" placeholder="Enter coffee taste" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
+                            <input type="text" name="taste" defaultValue={controlForm?.taste} placeholder="Enter coffee taste" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
                         </div>
                     </div>
 
@@ -87,13 +109,13 @@ const Form = ({ controlForm }) => {
                             <label className="label text-[#1B1A1A]">
                                 <span className="label-text">Category</span>
                             </label>
-                            <input type="text" name="category" placeholder="Enter coffee category" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
+                            <input type="text" name="category" defaultValue={controlForm?.category} placeholder="Enter coffee category" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
                         </div>
                         <div className="flex-grow form-control">
                             <label className="label text-[#1B1A1A]">
                                 <span className="label-text">Details</span>
                             </label>
-                            <input type="text" name="details" placeholder="Enter coffee details" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
+                            <input type="text" name="details" defaultValue={controlForm?.details} placeholder="Enter coffee details" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
                         </div>
                     </div>
 
@@ -103,13 +125,13 @@ const Form = ({ controlForm }) => {
                             <label className="label text-[#1B1A1A]">
                                 <span className="label-text">Price</span>
                             </label>
-                            <input type="text" name="price" placeholder="Enter coffee price" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
+                            <input type="text" name="price" defaultValue={controlForm?.price} placeholder="Enter coffee price" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
                         </div>
                         <div className="flex-grow form-control">
                             <label className="label text-[#1B1A1A]">
                                 <span className="label-text">Photo</span>
                             </label>
-                            <input type="text" name="photoURL" placeholder="Enter photo URL" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
+                            <input type="text" name="photoURL" defaultValue={controlForm?.photoURL} placeholder="Enter photo URL" className="input input-ghost w-full rounded-sm bg-white font-Raleway" />
                         </div>
                     </div>
 

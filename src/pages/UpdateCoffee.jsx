@@ -1,15 +1,16 @@
 import { GoArrowLeft } from "react-icons/go";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Form from "../components/Form";
 
 const UpdateCoffee = () => {
-
+    const coffee = useLoaderData();
+    const {_id, name, chef, supplier, taste, category, details, price, photoURL} = coffee;
     const controlForm = {
         id: "updateCoffeeForm",
         title: "Update Coffee",
-        button: "Update Coffee"
+        button: "Update Coffee",
+        _id, name, chef, supplier, taste, category, details, price, photoURL
     };
-
     return (
         <section className="max-w-7xl mx-auto">
             <div className="inline-block py-8">

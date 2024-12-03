@@ -1,16 +1,9 @@
 import { IoEyeOutline, IoPencil } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const PopularProduct = ({ product }) => {
-
-    const handleShow = (_id) => {
-        console.log(_id);
-    };
-
-    const handleUpdate = (_id) => {
-        console.log(_id);
-    };
+const PopularProduct = ({ product, products, setProducts }) => {
 
     const handleDelete = (_id) => {
         // console.log(_id);
@@ -36,6 +29,10 @@ const PopularProduct = ({ product }) => {
                             text: "Your coffe has been deleted.",
                             icon: "success"
                         });
+                        
+                        const remainingCoffee = products.filter(coffee => coffee._id !== _id);
+
+                        setProducts(remainingCoffee);
                     }
                 })
             }
@@ -62,8 +59,10 @@ const PopularProduct = ({ product }) => {
                 </p>
             </div>
             <div className="flex flex-col justify-center mx-5 space-y-3">
-                <button onClick={() => handleShow(product._id)} className="p-1 rounded-sm bg-[#D2B48C]"><IoEyeOutline className="text-lg text-white" /></button>
-                <button onClick={() => handleUpdate(product._id)} className="p-1 rounded-sm bg-[#3C393B]"><IoPencil className="text-lg text-white" /></button>
+                <Link to={`/details/${product._id}`}>
+                    <button className="p-1 rounded-sm bg-[#D2B48C]"><IoEyeOutline className="text-lg text-white" /></button>
+                </Link>
+                <Link to={`/updateCoffee/${product._id}`}><button className="p-1 rounded-sm bg-[#3C393B]"><IoPencil className="text-lg text-white" /></button></Link>
                 <button onClick={() => handleDelete(product._id)} className="p-1 rounded-sm bg-[#EA4744]"><MdDelete className="text-lg text-white" /></button>
             </div>
         </div>

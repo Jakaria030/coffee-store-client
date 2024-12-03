@@ -29,6 +29,8 @@ const PopularProducts = () => {
                 products.map(product => <PopularProduct
                     key={product._id}
                     product={product}
+                    products={products}
+                    setProducts={setProducts}
                 ></PopularProduct>)
             }
             </div>           
